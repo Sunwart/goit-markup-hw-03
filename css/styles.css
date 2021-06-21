@@ -15,6 +15,7 @@ html {
   --brand-color: #2196f3;
   --text-color: #757575;
   --titles-color: #212121;
+  --card-set-gap: 30px;
 }
 
 body {
@@ -23,7 +24,13 @@ body {
   font-family: 'Roboto', 'Verdana', 'Tahoma', sans-serif;
 }
 
-.list {
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -32,13 +39,19 @@ body {
 .container {
   margin-left: auto;
   margin-right: auto;
-  width: 1230px;
-  outline: solid brown 1px;
+  width: 1200px;
   padding-left: 15px;
   padding-right: 15px;
 }
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
 
 /* =========== Header =========== */
+.header {
+  border-bottom: 1px solid #ececec;
+}
 .header-logo {
   color: var(--opposite-basic-color);
   font-family: 'Raleway', 'Roboto', sans-serif;
@@ -47,6 +60,7 @@ body {
   letter-spacing: 0.03em;
   line-height: 1.19;
   text-decoration: none;
+  margin-right: 93px;
 }
 .brand {
   color: var(--brand-color);
@@ -58,7 +72,11 @@ body {
   letter-spacing: 0.02em;
   line-height: 1.14;
   text-decoration: none;
+  display: inline-block;
+  padding-top: 32px;
+  padding-bottom: 32px;
 }
+
 .site-nav:hover,
 .site-nav:focus,
 .site-nav:active {
@@ -79,12 +97,40 @@ body {
 .current-page {
   color: var(--brand-color);
 }
+
+/* ============ Header Aligment ============ */
+
+.menu,
+.contacts,
+.header-alignment {
+  display: flex;
+  align-items: center;
+}
+.contacts {
+  margin-left: auto;
+}
+.header > .container {
+  display: flex;
+  align-items: center;
+}
+.space:not(:last-child) {
+  margin-right: 50px;
+}
+
 /* Main content */
 
 /* =========== Hero =========== */
+
 .hero-section {
   background-color: var(--bg-colog-dark);
   text-align: center;
+}
+.hero-align {
+  margin-left: auto;
+  margin-right: auto;
+  width: 643px;
+  padding-top: 200px;
+  padding-bottom: 200px;
 }
 .hero-title {
   color: var(--basic-color);
@@ -116,11 +162,8 @@ body {
 }
 
 /* =========== Advantages =========== */
-.advantages {
-  padding-top: 94px;
-  padding-bottom: 94px;
-}
-.advantages-item {
+
+.advantages-title {
   color: var(--titles-color);
   font-size: 14px;
   font-weight: 700;
@@ -137,12 +180,24 @@ body {
   margin-top: 0;
   margin-bottom: 0;
 }
-/* =========== Services =========== */
-.services {
-  margin-bottom: 94px;
+.advantages {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: calc(-1 * var(--card-set-gap));
+  margin-bottom: calc(-1 * var(--card-set-gap));
+}
+.advantages-item {
+  flex-basis: calc(100% / 4 - var(--card-set-gap));
+  display: block;
+  margin-right: var(--card-set-gap);
+  margin-bottom: var(--card-set-gap);
 }
 
-/* Section title */
+/* =========== Services =========== */
+
+.section.services-space {
+  padding-top: 0;
+}
 .section-title {
   color: var(--titles-color);
   font-size: 36px;
@@ -153,12 +208,21 @@ body {
   margin-top: 0;
   margin-bottom: 50px;
 }
-
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: calc(-1 * var(--card-set-gap));
+  margin-bottom: calc(-1 * var(--card-set-gap));
+}
+.services-item {
+  flex-basis: calc(100% / 3 - var(--card-set-gap));
+  margin-right: var(--card-set-gap);
+  margin-bottom: var(--card-set-gap);
+}
 /* =========== Our team =========== */
-.team {
+
+.team-bg-color {
   background-color: var(--bg-color-light);
-  padding-top: 94px;
-  padding-bottom: 94px;
 }
 .name {
   color: var(--titles-color);
@@ -178,8 +242,27 @@ body {
   margin-top: 0px;
   margin-bottom: 0px;
 }
-
+.member {
+  padding: 30px 0;
+  display: block;
+}
+.team {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: calc(-1 * var(--card-set-gap));
+  margin-bottom: calc(-1 * var(--card-set-gap));
+}
+.team-item {
+  flex-basis: calc(100% / 4 - var(--card-set-gap));
+  margin-right: var(--card-set-gap);
+  margin-bottom: var(--card-set-gap);
+  background-color: var(--basic-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+}
 /* =========== Footer =========== */
+
 .footer {
   background-color: var(--bg-colog-dark);
   padding-top: 60px;
@@ -196,13 +279,6 @@ body {
   display: inline-block;
   margin-bottom: 20px;
 }
-.li {
-  background-color: lawngreen;
-}
-.big {
-  margin: 0;
-  padding: 0;
-}
 .address {
   color: var(--basic-color);
   font-size: 14px;
@@ -210,7 +286,6 @@ body {
   letter-spacing: 0.03em;
   line-height: 1.71;
   text-decoration: none;
-  outline: mediumorchid 1px solid;
 }
 .footer-contacts {
   color: rgba(255, 255, 255, 0.6);
@@ -218,8 +293,9 @@ body {
   font-style: normal;
   letter-spacing: 0.03em;
   line-height: 1.71;
+  display: block;
+  margin-top: 9px;
   text-decoration: none;
-  background-color: cornflowerblue;
 }
 .footer-contacts:hover,
 .footer-contacts:focus {
@@ -227,6 +303,9 @@ body {
 }
 
 /* =========== Portfolio =========== */
+
+/* =========== Filters =========== */
+
 .filter {
   color: var(--titles-color);
   font-family: inherit;
@@ -240,6 +319,17 @@ body {
   cursor: pointer;
   padding: 6px 22px;
 }
+.center {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+.align-horizontal {
+  margin-right: 8px;
+}
+.align-horizontal:last-of-type {
+  margin-right: 0;
+}
 .filter:hover,
 .filter:focus,
 .filter:active {
@@ -252,19 +342,44 @@ body {
   background-color: var(--brand-color);
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 1px 2px rgba(0, 0, 0, 0.08);
 }
+
+/* =========== Portfolio Items =========== */
+
 .link {
   text-decoration: none;
 }
+
 .project-name {
   color: var(--titles-color);
   font-size: 18px;
   font-weight: 700;
   line-height: 2;
   letter-spacing: 0.06em;
+  margin: 0;
+  margin-bottom: 4px;
 }
 .project-type {
   color: var(--text-color);
   font-size: 16px;
   line-height: 1.88;
   letter-spacing: 0.03em;
+  margin: 0;
+}
+.legend {
+  display: block;
+  padding: 20px 24px;
+  border-bottom: 1px solid #eeeeee;
+  border-left: 1px solid #eeeeee;
+  border-right: 1px solid #eeeeee;
+}
+.project {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: calc(-1 * var(--card-set-gap));
+  margin-bottom: calc(-1 * var(--card-set-gap));
+}
+.project-item {
+  flex-basis: calc(100% / 3 - var(--card-set-gap));
+  margin-right: var(--card-set-gap);
+  margin-bottom: var(--card-set-gap);
 }
