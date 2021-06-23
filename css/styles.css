@@ -121,7 +121,6 @@ ul {
 
 .hero-section {
   background-color: var(--bg-colog-dark);
-  text-align: center;
 }
 .hero-align {
   margin-left: auto;
@@ -129,6 +128,7 @@ ul {
   width: 643px;
   padding-top: 200px;
   padding-bottom: 200px;
+  text-align: center;
 }
 .hero-title {
   color: var(--basic-color);
@@ -138,7 +138,7 @@ ul {
   letter-spacing: 0.06em;
   line-height: 1.36;
   margin-top: 0;
-  margin-bottom: 30;
+  margin-bottom: 30px;
 }
 .order {
   background-color: var(--brand-color);
@@ -182,20 +182,17 @@ ul {
   display: flex;
   flex-wrap: wrap;
   margin-right: calc(-1 * var(--card-set-gap));
-  margin-bottom: calc(-1 * var(--card-set-gap));
 }
 .advantages-item {
   flex-basis: calc(100% / 4 - var(--card-set-gap));
   display: block;
   margin-right: var(--card-set-gap);
-  margin-bottom: var(--card-set-gap);
 }
-
 /* =========== Services =========== */
 
-.section.services-space {
+/* .section.services-space {
   padding-top: 0;
-}
+} */
 .section-title {
   color: var(--titles-color);
   font-size: 36px;
@@ -210,12 +207,10 @@ ul {
   display: flex;
   flex-wrap: wrap;
   margin-right: calc(-1 * var(--card-set-gap));
-  margin-bottom: calc(-1 * var(--card-set-gap));
 }
 .services-item {
   flex-basis: calc(100% / 3 - var(--card-set-gap));
   margin-right: var(--card-set-gap);
-  margin-bottom: var(--card-set-gap);
 }
 /* =========== Our team =========== */
 
@@ -248,12 +243,10 @@ ul {
   display: flex;
   flex-wrap: wrap;
   margin-right: calc(-1 * var(--card-set-gap));
-  margin-bottom: calc(-1 * var(--card-set-gap));
 }
 .team-item {
   flex-basis: calc(100% / 4 - var(--card-set-gap));
   margin-right: var(--card-set-gap);
-  margin-bottom: var(--card-set-gap);
   background-color: var(--basic-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
